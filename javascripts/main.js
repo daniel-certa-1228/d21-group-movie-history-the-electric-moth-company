@@ -117,3 +117,24 @@ $(".search").on('keyup', function (pushEnter) {
     $(".search").val("");
   }
 });
+// This is the show/hide slideder 
+// $("#watched").click(function() {
+//   console.log("watched");
+//   $(".sliderWrapper").removeClass("is-hidden");
+// });
+// $("#untracked").click(function() {
+//   console.log("untracked");
+//   $(".sliderWrapper").addClass("is-hidden");
+// });
+// $("#watchList").click(function() {
+//   console.log("watchList");
+//   $(".sliderWrapper").addClass("is-hidden");
+// });
+
+// $("[type=range]").change(function(){
+//   let ratingSlide = $(this).val();
+//   console.log("ratingSlide", ratingSlide);
+//   if 
+
+//   }
+// });
