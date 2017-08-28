@@ -14,7 +14,7 @@ var card = {
        let thisMovie = movies[item];
        thisMovie.fbID = cardMovieKeys[index];
        let movieContent =
-       `<div class="col xl4 l6 m6 s12" id=card--${thisMovie.movieID}>
+       `<div class="col xl4 l6 m6 s12" id=card--${thisMovie.movieID} data-rating="${thisMovie.rating}">
    				<div class="card sticky-action" id=cardSticky${thisMovie.movieID}>
    					<div class="card-image waves-effect waves-block waves-light" id=cardImage${thisMovie.movieID}>
    					  <img class="activator icon${thisMovie.movieID}" src="${thisMovie.poster}">
