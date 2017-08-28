@@ -86,6 +86,7 @@ var card = {
           handler.removeMovie(thisMovie);
         } else if (logState === true && thisMovie.inFB === false){
           $(`#cardSticky${thisMovie.movieID}`).append(`<a class="btn-floating btn-large waves-effect waves-light green" id=plus${thisMovie.movieID}><i class="material-icons">add</i></a>`);
+          $(`#rateYo${index}`).remove();
           handler.watchList(thisMovie);
         }
         handler.moreInfo(thisMovie);
