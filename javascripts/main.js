@@ -205,10 +205,42 @@ $("#all").click(function() {
 
 });
 
-// $("[type=range]").change(function(){
-//   let ratingSlide = $(this).val();
-//   console.log("ratingSlide", ratingSlide);
-//   if 
+// User View Slider
+$("[type=range]").change(function(){
+  let ratingSlide = $(this).val();
+  let slideNumber = parseInt(ratingSlide);
+  let allCardsUSER = $("#userview-content").children();
+  $(allCardsUSER).each(function(card){
+    let rating = $(this).attr('data-rating');
+    let ratingNum = parseInt(rating);
+    let compare = slideNumber - ratingNum;
+    console.log("compare", compare);
+    if (compare !== 0){
+      $(this).addClass('is-hidden');
+    } else {
+      $(this).removeClass('is-hidden');
+    }
+  }
+);
+});
 
-//   }
-// });
+// Search View Slider
+$("[type=range]").change(function(){
+  let ratingSlide = $(this).val();
+  let slideNumber = parseInt(ratingSlide);
+  let allCardsUSER = $("#searchView").children();
+  $(allCardsUSER).each(function(card){
+    let rating = $(this).attr('data-rating');
+    let ratingNum = parseInt(rating);
+    let compare = slideNumber - ratingNum;
+    console.log("compare", compare);
+    if (compare !== 0){
+      $(this).addClass('is-hidden');
+    } else {
+      $(this).removeClass('is-hidden');
+    }
+  }
+);
+});
+
+  
