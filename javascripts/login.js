@@ -18,6 +18,7 @@ $(".auth-btn").click(function() {
     $(".auth-btn").addClass("is-hidden");
     $(".logout").removeClass("is-hidden");
     $(".myMoviesMobile").removeClass("is-hidden");
+    $("#untracked").addClass("is-hidden");
     let userName = result.user.displayName;
     userName = userName.slice(0, userName.indexOf(" "));
     $('.my-movies').show().html(`${userName}'s Movies`);
