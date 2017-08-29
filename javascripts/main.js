@@ -17,6 +17,7 @@ users.logOut();
 
 $(".search").on('keyup', function (pushEnter) {
   if (pushEnter.which === 13) {
+    $('#splash').hide();
     $('.dropdown-button').dropdown('close');
     $('#searchView').html('');
     $('#userview-content').html('');
