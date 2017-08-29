@@ -117,6 +117,7 @@ $(".search").on('keyup', function (pushEnter) {
     $(".search").val("");
   }
 });
+
 // This is the show/hide slideder 
 $("#watched").click(function() {
   console.log("watched");
@@ -131,10 +132,12 @@ $("#watchList").click(function() {
   $(".sliderWrapper").addClass("is-hidden");
 });
 
-// $("[type=range]").change(function(){
-//   let ratingSlide = $(this).val();
-//   console.log("ratingSlide", ratingSlide);
-//   if 
+$("[type=range]").change(function(){
+  let ratingSlide = $(this).val();
+  let allCards = $("#userview-content");
+    Array.from(allCards[0]).forEach(function(card){
+      console.log("ratingSlide", ratingSlide);
+    });
+  });
 
-//   }
-// });
+
