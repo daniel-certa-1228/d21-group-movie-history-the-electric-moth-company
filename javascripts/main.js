@@ -24,6 +24,7 @@ $(".search").on('keyup', function (pushEnter) {
     $("#userView-content").hide();
     $("#searchView").show();
     $("#untracked").removeClass("is-hidden");
+    $("#all").removeClass("is-hidden");
     let userVal;
     if ($(window).width() < 993){
       userVal = $("#mobileSearch").val();
@@ -186,6 +187,22 @@ $("#watchList").click(function() {
       $(this).removeClass('is-hidden');
     }
   });
+});
+$("#all").click(function() {
+  console.log( "all" );
+  $(".sliderWrapper").addClass("is-hidden");
+
+  let allCards = $("#searchView").children();
+    $(allCards).each(function(card){
+      $(this).removeClass('is-hidden');
+    });
+
+  let allCardsUSER = $("#userview-content").children();
+    $(allCardsUSER).each(function(card){
+      $(this).removeClass('is-hidden');
+    });
+
+
 });
 
 // $("[type=range]").change(function(){
