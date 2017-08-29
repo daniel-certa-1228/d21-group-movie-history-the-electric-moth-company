@@ -38,6 +38,7 @@ $(".auth-btn").click(function() {
 $(".logout").click(() => {
   // console.log("logout clicked");
   user.logOut();
+  $(".sliderWrapper").addClass("is-hidden");
   $(".auth-btn").removeClass("is-hidden");
   $(".logout").addClass("is-hidden");
   $(".myMoviesMobile").addClass("is-hidden");
