@@ -11,6 +11,8 @@ $(".my-movies").on("click", function(){
   $('.row').empty();
   $("#userView").show();
   $("#searchView").hide();
+  $("#untracked").addClass("is-hidden");
+  $(".sliderWrapper").addClass("is-hidden");
   fbCall.returnWatchList()
   .then(function(data){
       cardCreation.createCard(data, false, true);

@@ -31,6 +31,7 @@ var card = {
               <span class="card-title grey-text text-darken-4">Cast</span>
               <p id=castReveal${thisMovie.movieID}></p>
    					</div>
+            <div class="spacer" id=spacer--${thisMovie.movieID}></div>
 						<div id=rateYo${index} class=rateYo></div>
           </div>
                </div>`;
@@ -83,6 +84,7 @@ var card = {
         }
         if (logState === true && thisMovie.inFB === true) {
           $(`#cardSticky${thisMovie.movieID}`).append(`<a class="btn-floating btn-large waves-effect waves-light red" id=remove${thisMovie.movieID}><i class="material-icons">remove</i></a>`);
+          $(`#spacer--${thisMovie.movieID}`).remove();
           handler.removeMovie(thisMovie);
         } else if (logState === true && thisMovie.inFB === false){
           $(`#cardSticky${thisMovie.movieID}`).append(`<a class="btn-floating btn-large waves-effect waves-light green" id=plus${thisMovie.movieID}><i class="material-icons">add</i></a>`);

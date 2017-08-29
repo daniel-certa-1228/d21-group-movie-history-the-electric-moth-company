@@ -23,6 +23,8 @@ $(".search").on('keyup', function (pushEnter) {
     $('.row').empty();
     $("#userView-content").hide();
     $("#searchView").show();
+    $("#untracked").removeClass("is-hidden");
+    $("#all").removeClass("is-hidden");
     let userVal;
     if ($(window).width() < 993){
       userVal = $("#mobileSearch").val();
@@ -121,14 +123,86 @@ $(".search").on('keyup', function (pushEnter) {
 $("#watched").click(function() {
   console.log("watched");
   $(".sliderWrapper").removeClass("is-hidden");
+  let allCards = $("#searchView").children();
+  $(allCards).each(function(card){
+    let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
+    let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
+    $(red).closest('div').parent().removeClass("is-hidden");
+    $(green).closest('div').parent().addClass("is-hidden");
+    let rating = $(this).attr('data-rating');
+    if(parseInt(rating) === 0) {
+      $(this).addClass('is-hidden');
+    }
+  });
+
+  let allCardsUSER = $("#userview-content").children();
+   console.log( "allCards", allCardsUSER );
+  $(allCardsUSER).each(function(card){
+    let rating = $(this).attr('data-rating');
+    console.log( "rating", rating );
+    if(parseInt(rating) === 0) {
+      $(this).addClass('is-hidden');
+    }  else  {
+      $(this).removeClass('is-hidden');
+    }
+  });
 });
 $("#untracked").click(function() {
   console.log("untracked");
   $(".sliderWrapper").addClass("is-hidden");
+  let allCards = $("#searchView").children();
+  // console.log( "allCards", allCards );
+  $(allCards).each(function(card){
+    let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
+    let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
+    // console.log( "card", red );
+    $(red).closest('div').parent().addClass("is-hidden");
+    $(green).closest('div').parent().removeClass("is-hidden");
+  });
 });
 $("#watchList").click(function() {
   console.log("watchList");
   $(".sliderWrapper").addClass("is-hidden");
+  let allCards = $("#searchView").children();
+  console.log( "allCards", allCards );
+  $(allCards).each(function(card){
+    let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
+    let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
+    $(red).closest('div').parent().removeClass("is-hidden");
+    $(green).closest('div').parent().addClass("is-hidden");
+    let rating = $(this).attr('data-rating');
+    if(parseInt(rating) !== 0) {
+      $(this).addClass('is-hidden');
+    }
+  });
+
+  let allCardsUSER = $("#userview-content").children();
+   console.log( "allCards", allCardsUSER );
+  $(allCardsUSER).each(function(card){
+    let rating = $(this).attr('data-rating');
+    console.log( "rating", rating );
+    if(parseInt(rating) !== 0) {
+      $(this).addClass('is-hidden');
+    }  else  {
+      $(this).removeClass('is-hidden');
+    }
+  });
+});
+$("#all").click(function() {
+  console.log( "all" );
+  $(".sliderWrapper").addClass("is-hidden");
+
+  let allCards = $("#searchView").children();
+    $(allCards).each(function(card){
+      $(this).removeClass('is-hidden');
+    });
+
+  let allCardsUSER = $("#userview-content").children();
+    $(allCardsUSER).each(function(card){
+      $(this).removeClass('is-hidden');
+    });
+
+
 });
 
 // $("[type=range]").change(function(){
