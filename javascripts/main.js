@@ -205,10 +205,21 @@ $("#all").click(function() {
 
 });
 
-// $("[type=range]").change(function(){
-//   let ratingSlide = $(this).val();
-//   console.log("ratingSlide", ratingSlide);
-//   if 
+let cardArray = $("#userview-content").children();
+  $(cardArray).each(function(card){
+    $(this).attr("rating");
+  });
 
-//   }
-// });
+console.log("cardArray", cardArray);
+
+
+$("[type=range]").change(function(){
+  let ratingSlide = $(this).val();
+  console.log("ratingSlide", ratingSlide);
+  if (Math.abs(cardArray.rating !== ratingSlide)) {
+    $('.builtCard').addClass('is-hidden');
+    
+   }else{
+    $('.builtCard').removeClass('is-hidden');
+   }
+});
