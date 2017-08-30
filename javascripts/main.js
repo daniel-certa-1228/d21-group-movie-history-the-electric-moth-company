@@ -31,6 +31,7 @@ $(".search").on('keyup', function (pushEnter) {
     $("#searchView").show();
     $("#untracked").removeClass("is-hidden");
     $("#all").removeClass("is-hidden");
+    $(".sliderWrapper").addClass("is-hidden");
     $("#bcrumb-wrapper").children().addClass("is-hidden");
     let userVal;
     if ($(window).width() < 993){
