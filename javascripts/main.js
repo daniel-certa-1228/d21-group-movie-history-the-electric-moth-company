@@ -127,6 +127,7 @@ $(".search").on('keyup', function (pushEnter) {
 // This is the show/hide slider 
 $("#watched").click(function() {
   let allCards = $("#searchView").children();
+  $(".sliderWrapper").removeClass("is-hidden");
   $("#bcrumb-wrapper").children().addClass("is-hidden");
   $(allCards).each(function(card){
     let searchWatchedShow = $(".searchWatched");
