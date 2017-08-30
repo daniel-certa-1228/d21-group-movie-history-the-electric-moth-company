@@ -1,3 +1,10 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+body {
+  font-family: 'Oxygen', sans-serif;
+  background-color: #484443;
+}
+
 .page-footer, .nav-wrapper{
     background: black;
 }
@@ -173,4 +180,17 @@ div#bottomStuff > div.card-content {
 #mobileSearch {
   padding-left: 10px !important;
 }
+
+
+/*****SPLASH PAGE STYLES******/
+#splash {
+  height: 60vh;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+}
+
+// ***********************************
+// ***** Some Media Query Stuff ******
+//
+// The stuff in cardCreation.js
 

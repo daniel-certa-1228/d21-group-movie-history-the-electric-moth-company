@@ -18,14 +18,14 @@
 		<nav>
 				<div class="nav-wrapper">
 				  <ul class="right hide-on-med-and-down">
-						<a href="#!" class="brand-logo left">Logo</a>
+						<a href="#!" class="brand-logo left">Movie Lister</a>
 						<li><input id="search" type="search" placeholder="Search For Movies" class="search"></li>
 						<li><a href="#" id="my-movies" class="my-movies">My Movies</a></li>
 						<li id="auth-btn" class="auth-btn"><a href="#" title="">Sign In</a></li>
 						<li id="logout" class="is-hidden logout"><a href="#" title="">Logout</a></li>
 				  </ul>
 					<i class='dropdown-button material-icons show-on-medium-and-down hide-on-med-and-up right' data-beloworigin="true" href='#' data-activates='dropdownMobile'>menu</i>
-					<a href="#!" class="brand-logo show-on-medium-and-down hide-on-med-and-up left">Logo</a>
+					<a href="#!" class="brand-logo show-on-medium-and-down hide-on-med-and-up left">Movie Lister</a>
 					<ul id="dropdownMobile" class="right nav__links dropdown-content">
 						<li class="liMobileSearch" onclick="event.stopPropagation();"><input id="mobileSearch" type="search" placeholder="Search For Movies" class="search"></li>
 						<li class="is-hidden myMoviesMobile"><a href="#" class="my-movies">My Movies</a></li>
@@ -97,16 +97,19 @@
 		<!-- BEGIN USER VIEW -->
 		<div id="userView" class="is-hidden">
 			<div class="userview-btns">
+				<a class="waves-effect waves-light btn toggleButton" id="all">All</a>
 				<a class="waves-effect waves-light btn toggleButton" id="untracked">Untracked</a>
 				<a class="waves-effect waves-light btn toggleButton" id="watchList">Watch List</a>
 				<a class="waves-effect waves-light btn toggleButton" id="watched">Watched</a>
-				<a class="waves-effect waves-light btn toggleButton" id="all">All</a>
 			</div>
 			<div class="sliderWrapper is-hidden">
+				<label for="starSlider" style="font-size: 1.2em;">Select Film by Rating:</label>
 				<p class="range-field">
-      <input type="range" id="starSlider" min="0" max="10" step="1" />
-    </p>
+			      <input type="range" id="starSlider" min="0" max="10" step="1" />
+			    </p>
 			</div>
+
+
 			<div id="userview-content" class="row">
 
 			</div>
@@ -118,6 +121,9 @@
 
 		</div>
 		<!-- END SEARCH VIEW -->
+		<div id="splash">
+
+		</div>
 	</div>
 	<!-- CONTAINER END -->
 </main>
@@ -126,8 +132,7 @@
 <footer class="page-footer">
 		<div class="footer-copyright">
 		  <div class="container">
-		  © 2014 Copyright Text
-		  <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+		  <p>&copy; 2017 MovieLister. This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
 		  </div>
 		</div>
 	  </footer>

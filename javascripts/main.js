@@ -9,6 +9,11 @@ var login = require('./login');
 var handlers = require('./handlers');
 var userView = require('./userView.js');
 
+$(document).ready(function() {
+  $('#splash').hide();
+  $('#splash').fadeIn(400);
+});
+
 ///-------Global movie object----------///
 var movieObject = {};
 
@@ -17,6 +22,7 @@ users.logOut();
 
 $(".search").on('keyup', function (pushEnter) {
   if (pushEnter.which === 13) {
+    // $('#splash').hide();
     $('.dropdown-button').dropdown('close');
     $('#searchView').html('');
     $('#userview-content').html('');
