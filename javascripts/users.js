@@ -24,6 +24,7 @@ function logInGoogle() {
 
 function logOut(){
 	$('#my-movies').hide();
+	$("#bcrumb-wrapper").children().addClass("is-hidden");
 	return firebase.auth().signOut();
 }
 function getUser(){
