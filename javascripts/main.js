@@ -31,6 +31,7 @@ $(".search").on('keyup', function (pushEnter) {
     $("#searchView").show();
     $("#untracked").removeClass("is-hidden");
     $("#all").removeClass("is-hidden");
+    $("#bcrumb-wrapper").children().addClass("is-hidden");
     let userVal;
     if ($(window).width() < 993){
       userVal = $("#mobileSearch").val();
@@ -69,6 +70,8 @@ $(".search").on('keyup', function (pushEnter) {
           }
         }
         card.createCard(movieObject, true, logState);
+        let searchYoursShow = $(".searchYours");
+        searchYoursShow.removeClass("is-hidden");
       });
     } else {
       logState = true;
@@ -119,18 +122,21 @@ $(".search").on('keyup', function (pushEnter) {
             }
           }
           card.createCard(movieObject, true, logState);
+          let searchYoursShow = $(".searchYours");
+          searchYoursShow.removeClass("is-hidden");
         });
       });
     }
     $(".search").val("");
   }
 });
-// This is the show/hide slideder 
+// This is the show/hide slider 
 $("#watched").click(function() {
-  console.log("watched");
-  $(".sliderWrapper").removeClass("is-hidden");
   let allCards = $("#searchView").children();
+  $("#bcrumb-wrapper").children().addClass("is-hidden");
   $(allCards).each(function(card){
+    let searchWatchedShow = $(".searchWatched");
+    searchWatchedShow.removeClass("is-hidden");
     let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
     let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
     $(red).closest('div').parent().removeClass("is-hidden");
@@ -139,13 +145,17 @@ $("#watched").click(function() {
     if(parseInt(rating) === 0) {
       $(this).addClass('is-hidden');
     }
+    
   });
 
   let allCardsUSER = $("#userview-content").children();
-   console.log( "allCards", allCardsUSER );
+  
+   // console.log( "allCards", allCardsUSER );
   $(allCardsUSER).each(function(card){
     let rating = $(this).attr('data-rating');
-    console.log( "rating", rating );
+    let userWatchedShow = $(".userWatched");
+    userWatchedShow.removeClass("is-hidden");
+    // console.log( "rating", rating );
     if(parseInt(rating) === 0) {
       $(this).addClass('is-hidden');
     }  else  {
@@ -154,11 +164,14 @@ $("#watched").click(function() {
   });
 });
 $("#untracked").click(function() {
-  console.log("untracked");
+  $("#bcrumb-wrapper").children().addClass("is-hidden");
+  // console.log("untracked");
   $(".sliderWrapper").addClass("is-hidden");
   let allCards = $("#searchView").children();
   // console.log( "allCards", allCards );
   $(allCards).each(function(card){
+    let searchUntrackedShow = $(".searchUntracked");
+    searchUntrackedShow.removeClass("is-hidden");
     let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
     let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
     // console.log( "card", red );
@@ -167,11 +180,14 @@ $("#untracked").click(function() {
   });
 });
 $("#watchList").click(function() {
-  console.log("watchList");
+  $("#bcrumb-wrapper").children().addClass("is-hidden");
+  // console.log("watchList");
   $(".sliderWrapper").addClass("is-hidden");
   let allCards = $("#searchView").children();
-  console.log( "allCards", allCards );
+  // console.log( "allCards", allCards );
   $(allCards).each(function(card){
+    let searchwatchListShow = $(".searchWatchList");
+    searchwatchListShow.removeClass("is-hidden");
     let red = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.red');
     let green = $(this).find('a.btn-floating.btn-large.waves-effect.waves-light.green');
     $(red).closest('div').parent().removeClass("is-hidden");
@@ -183,10 +199,12 @@ $("#watchList").click(function() {
   });
 
   let allCardsUSER = $("#userview-content").children();
-   console.log( "allCards", allCardsUSER );
+   // console.log( "allCards", allCardsUSER );
   $(allCardsUSER).each(function(card){
     let rating = $(this).attr('data-rating');
-    console.log( "rating", rating );
+    let userWatchListShow = $(".userWatchList");
+    userWatchListShow.removeClass("is-hidden");
+    // console.log( "rating", rating );
     if(parseInt(rating) !== 0) {
       $(this).addClass('is-hidden');
     }  else  {
@@ -195,16 +213,20 @@ $("#watchList").click(function() {
   });
 });
 $("#all").click(function() {
-  console.log( "all" );
   $(".sliderWrapper").addClass("is-hidden");
-
+  $("#bcrumb-wrapper").children().addClass("is-hidden");
   let allCards = $("#searchView").children();
+
     $(allCards).each(function(card){
+    let searchAllShow = $(".searchAll");
+    searchAllShow.removeClass("is-hidden"); 
       $(this).removeClass('is-hidden');
     });
 
   let allCardsUSER = $("#userview-content").children();
     $(allCardsUSER).each(function(card){
+      let userAllShow = $(".userAll");
+      userAllShow.removeClass("is-hidden");
       $(this).removeClass('is-hidden');
     });
 
@@ -220,7 +242,6 @@ $("[type=range]").change(function(){
     let rating = $(this).attr('data-rating');
     let ratingNum = parseInt(rating);
     let compare = slideNumber - ratingNum;
-    console.log("compare", compare);
     if (compare !== 0){
       $(this).addClass('is-hidden');
     } else {
@@ -239,7 +260,6 @@ $("[type=range]").change(function(){
     let rating = $(this).attr('data-rating');
     let ratingNum = parseInt(rating);
     let compare = slideNumber - ratingNum;
-    console.log("compare", compare);
     if (compare !== 0){
       $(this).addClass('is-hidden');
     } else {

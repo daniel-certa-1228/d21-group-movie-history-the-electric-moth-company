@@ -22,6 +22,9 @@ $(".auth-btn").click(function() {
     $(".logout").removeClass("is-hidden");
     $(".myMoviesMobile").removeClass("is-hidden");
     $("#untracked").addClass("is-hidden");
+    $("#bcrumb-wrapper").children().addClass("is-hidden");
+    let userMyMoviesShow = $(".myMoviesBcm");
+    userMyMoviesShow.removeClass("is-hidden");
     // $("#all").addClass("is-hidden");
     let userName = result.user.displayName;
     userName = userName.slice(0, userName.indexOf(" "));

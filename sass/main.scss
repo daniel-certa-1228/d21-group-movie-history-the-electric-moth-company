@@ -9,17 +9,28 @@ body {
     background: black;
 }
 
+#bcrumb-wrapper {
+  background: #26a69a;
+  color: black;
+}
+
+.brcumbStyle{
+  padding-left: 40px;
+}
+
 body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+.auth-btn {
+  padding-left: 220px;
 }
 
 main {
 flex: 1 0 auto;
 }
 
-//using this on home page also
 .is-hidden {
 	display: none;
 }
@@ -33,7 +44,8 @@ flex: 1 0 auto;
   height: 30px;
 }
 
-//************ Star Styling *************\\
+
+/************ Star Styling *************/
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -117,31 +129,33 @@ div.userview-btns > a {
   margin-right: 1px;
   left: 5px;
 }
-// #bottomStuff {
-//   height: 225px !important;
-// }
-//
-// .card-content {
-//   padding: 16px !important;
-// }
-//
-// span.card-title.activator {
-//   max-width: 280px !important;
-// }
-//
-// div#bottomStuff > div.card-content {
-//   height: 100px !important;
-// }
-//****************************************\\
+ #bottomStuff {
+   height: 225px !important;
+ }
+
+ .card-content {
+   padding: 16px !important;
+}
+
+span.card-title.activator {
+  max-width: 280px !important;
+}
+
+div#bottomStuff > div.card-content {
+  height: 100px !important;
+}
+
+
+/****************************************/
 
 .card-reveal {
   background: rgba(255, 255, 255, 0.85) !important;
 }
 .container{
-  margin-top: 30px;
+  margin-top: 80px;
 }
 
-///////USER VIEW//////
+/*///////USER VIEW//////*/
 
 #search{
   margin-right: 500px;
@@ -152,7 +166,7 @@ div.userview-btns > a {
 }
 
 #userview-content{
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 #dropdownMobile {
@@ -167,6 +181,7 @@ div.userview-btns > a {
   padding-left: 10px !important;
 }
 
+
 /*****SPLASH PAGE STYLES******/
 #splash {
   height: 60vh;
@@ -178,3 +193,4 @@ div.userview-btns > a {
 // ***** Some Media Query Stuff ******
 //
 // The stuff in cardCreation.js
+
